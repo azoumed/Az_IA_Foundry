@@ -1,0 +1,31 @@
+
+To deploy an Azure AI Agent (e.g., an AI model hosted on Azure services), you typically need to provision several Azure services, 
+such as Azure Machine Learning, Azure Kubernetes Service (AKS), Azure Storage, and optionally Azure Application Insights for monitoring. 
+Below is a Terraform script that uses modules for each Azure service required to deploy an AI agent.
+
+
+terraform/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── modules/
+│   ├── resource_group/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── storage_account/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── machine_learning_workspace/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── aks_cluster/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── application_insights/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
