@@ -33,3 +33,8 @@ variable "app_insights_name" {
   type        = string
   default     = "appinsights"
 }
+
+variable "key_vault_id" {
+  description = "The ID of the Key Vault to be used by the Machine Learning Workspace"
+  type        = string
+}

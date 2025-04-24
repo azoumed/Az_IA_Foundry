@@ -1,5 +1,9 @@
 provider "azurerm" {
   features {}
+  subscription_id = "b2e9330a-f79d-4e94-b142-ab54bfc83b3a"
+  client_id       = "a2fa39c8-59f9-4230-b9ba-43eaa0cd6268"
+  client_secret   = "e0d68510-65bd-4755-a7c6-4e91fedf58d6"
+  tenant_id       = "58ca8011-732b-4119-9235-3bed67fcc374"
 }
 
 module "resource_group" {
@@ -21,6 +25,8 @@ module "machine_learning_workspace" {
   resource_group_name = module.resource_group.name
   location            = module.resource_group.location
   storage_account_id  = module.storage_account.id
+  application_insights_id = module.application_insights.id
+  key_vault_id        = var.key_vault_id
 }
 
 module "aks_cluster" {
